@@ -16,6 +16,7 @@ stages:
   - validate
   - plan
   - apply
+  - destroy
 
 validate:
   stage: validate
@@ -41,6 +42,16 @@ apply:
     - gitlab-terraform apply
   dependencies:
     - plan
+  only:
+    - master
+    - main
+
+destroy:
+  stage: destroy
+  allow_failure: false
+  script:
+    - gitlab-terraform destroy -auto-approve
+  when: manual
   only:
     - master
     - main
