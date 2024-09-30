@@ -45,3 +45,4 @@ apply:
   when: manual
   only:
     - master
+    - main
