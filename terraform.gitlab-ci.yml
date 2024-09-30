@@ -10,7 +10,7 @@ cache:
 
 before_script:
   - cd ${TF_ROOT}
-  - gitlab-terraform init
+  - gitlab-terraform init -upgrade
 
 stages:
   - validate
