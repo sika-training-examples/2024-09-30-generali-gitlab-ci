@@ -42,7 +42,6 @@ apply:
     - gitlab-terraform apply
   dependencies:
     - plan
-  when: manual
   only:
     - master
     - main
